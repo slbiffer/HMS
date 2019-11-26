@@ -104,7 +104,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-7"><jsp:include page="viewmain_type.jsp"></jsp:include></div>
+			<div class="col-md-7"><jsp:include page="ViewMaintypeTemplate.jsp"></jsp:include></div>
 
 		</div>
 	</div>

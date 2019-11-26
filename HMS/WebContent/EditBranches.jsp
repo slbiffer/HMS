@@ -120,7 +120,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-7"><jsp:include page="ViewBranches.jsp"></jsp:include></div>
+			<div class="col-md-7"><jsp:include page="ViewBranchTemplate.jsp"></jsp:include></div>
 
 		</div>
 	</div>

@@ -124,7 +124,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-7"><jsp:include page="ViewDevices.jsp"></jsp:include></div>
+			<div class="col-md-7"><jsp:include page="ViewDevicesTemplate.jsp"></jsp:include></div>
 
 		</div>
 	</div>

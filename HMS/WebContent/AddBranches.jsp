@@ -61,7 +61,7 @@
 			<div class="col-md-5"> 	<form class="form-horizontal" role="form" style="color: #010101"
 		id="AddBranch" method="post" action="AddBranches_controller.jsp">
 		<h2>Add a Branch</h2>
-		
+		<br>
 <!-- 		<div class="form-group row"> -->
 <!-- 			&nbsp &nbsp &nbsp &nbsp <label for="branch_id" -->
 <!-- 				class="col-md-4 col-form-label">Branch Id</label> -->
@@ -123,7 +123,7 @@
 			</button>
 		</div>
 	</form></div>
-			<div class="col-md-7"><jsp:include page="ViewBranches.jsp"></jsp:include></div>
+			<div class="col-md-7"><jsp:include page="ViewBranchTemplate.jsp"></jsp:include></div>
 
 		</div>
 	</div>
