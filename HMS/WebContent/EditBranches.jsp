@@ -17,8 +17,8 @@
 	<%@page import="com.hms.dao.branchesDao, com.hms.bean.branches"%>
 
 	<%
-		String ids = request.getParameter("id");
-		int id=Integer.parseInt(ids);
+		String Id = request.getParameter("id");
+		int id=Integer.parseInt(Id);
 		branches b = branchesDao.getRecordById(id);
 	%>
 
@@ -69,14 +69,14 @@
 					action="EditBranches_controller.jsp">
 					<h2>Edit a Branch</h2>
 
-					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="branch_id"
-							class="col-md-4 col-form-label">Branch Id</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" id="branch_id"
-								name="branch_id" value="<%=b.getBranch_id()%>">
-						</div>
-					</div>
+<!-- 					<div class="form-group row"> -->
+<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="branch_id" -->
+<!-- 							class="col-md-4 col-form-label">Branch Id</label> -->
+<!-- 						<div class="col-md-7"> -->
+<!-- 							<input type="text" class="form-control" id="branch_id" -->
+<%-- 								name="branch_id" value="<%=b.getBranch_id()%>"> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
 					<div class="form-group row">
 						&nbsp &nbsp &nbsp &nbsp <label for="b_name"
 							class="col-md-4 col-form-label">Branch Name</label>

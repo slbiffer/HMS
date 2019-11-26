@@ -66,14 +66,14 @@
 					id="Edit_Main_Types" method="post"
 					action="EditCategory_Controller.jsp">
 					<h2>Edit a Category</h2>
-					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="main_category_id"
-							class="col-md-4 col-form-label">Main Category Id</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" id="mainCid"
-								name="mainCid" value="<%=c.getMainCid()%>">
-						</div>
-					</div>
+<!-- 					<div class="form-group row"> -->
+<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="main_category_id" -->
+<!-- 							class="col-md-4 col-form-label">Main Category Id</label> -->
+<!-- 						<div class="col-md-7"> -->
+<!-- 							<input type="text" class="form-control" id="mainCid" -->
+<%-- 								name="mainCid" value="<%=c.getMainCid()%>"> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
 					<div class="form-group row">
 						&nbsp &nbsp &nbsp &nbsp <label for="cname"
 							class="col-md-4 col-form-label">Category Name</label>

@@ -67,14 +67,14 @@
 				<form class="form-horizontal" role="form" style="color: #010101"
 					id="Edit_Main_Types" method="post" action="editmain_type.jsp">
 					<h2>Edit a Main Company</h2>
-					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="main_company_id"
-							class="col-md-4 col-form-label">Main Company Id</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" id="main_company_id"
-								name="mainId" value="<%=u.getmainId()%>">
-						</div>
-					</div>
+<!-- 					<div class="form-group row"> -->
+<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="main_company_id" -->
+<!-- 							class="col-md-4 col-form-label">Main Company Id</label> -->
+<!-- 						<div class="col-md-7"> -->
+<!-- 							<input type="text" class="form-control" id="main_company_id" -->
+<%-- 								name="mainId" value="<%=u.getmainId()%>"> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
 					<div class="form-group row">
 						&nbsp &nbsp &nbsp &nbsp <label for="main_company_name"
 							class="col-md-4 col-form-label">Company Name</label>

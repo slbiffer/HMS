@@ -67,14 +67,14 @@
 					id="Edit_Main_Types" method="post"
 					action="EditDevices_controller.jsp">
 					<h2>Edit a Device</h2>
-					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="device_id"
-							class="col-md-4 col-form-label">Device Id</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" id="device_id"
-								name="device_id" value="<%=d.getDevice_id()%>">
-						</div>
-					</div>
+<!-- 					<div class="form-group row"> -->
+<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="device_id" -->
+<!-- 							class="col-md-4 col-form-label">Device Id</label> -->
+<!-- 						<div class="col-md-7"> -->
+<!-- 							<input type="text" class="form-control" id="device_id" -->
+<%-- 								name="device_id" value="<%=d.getDevice_id()%>"> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
 					<div class="form-group row">
 						&nbsp &nbsp &nbsp &nbsp <label for="d_name"
 							class="col-md-4 col-form-label">Device Name</label>

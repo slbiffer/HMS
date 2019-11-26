@@ -50,7 +50,7 @@
 							<td>${d.getD_warranty_period()}</td>
 							<td>${d.getAssign_date()}</td>
 							<td><a href="EditDevices.jsp?id=${d.getDevice_id()}">Edit</a></td>
-							<td><a href="deletemain_type.jsp?id=${d.getDevice_id()}">Delete</a></td>
+							<td><a href="deleteDevices_controller.jsp?id=${d.getDevice_id()}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

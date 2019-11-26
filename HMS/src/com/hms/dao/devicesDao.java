@@ -39,12 +39,11 @@ public class devicesDao extends HttpServlet {
 
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement(
-					"insert into devices(device_id, d_name,d_serial_number,d_warranty_period,assign_date) values(?,?,?,?,?)");
-			ps.setString(1, d.getDevice_id());
-			ps.setString(2, d.getD_name());
-			ps.setString(3, d.getD_serial_number());
-			ps.setString(4, d.getD_warranty_period());
-			ps.setString(5, d.getAssign_date() );
+					"insert into devices(d_name,d_serial_number,d_warranty_period,assign_date) values(?,?,?,?)");
+			ps.setString(1, d.getD_name());
+			ps.setString(2, d.getD_serial_number());
+			ps.setString(3, d.getD_warranty_period());
+			ps.setString(4, d.getAssign_date() );
 			status = ps.executeUpdate();
 			
 			con.close();
@@ -64,7 +63,7 @@ public class devicesDao extends HttpServlet {
 			ps.setString(2, d.getD_serial_number());
 			ps.setString(3, d.getD_warranty_period());
 			ps.setString(4, d.getAssign_date());
-			ps.setString(5, d.getDevice_id());
+			ps.setInt(5, d.getDevice_id());
 			status = ps.executeUpdate();
 			con.close();
 			
@@ -74,12 +73,12 @@ public class devicesDao extends HttpServlet {
 		return status;
 	}
 
-	public static int delete(devices d) {
+	public static int delete(int id) {
 		int status = 0;
 		try {
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement("delete from devices where device_id=?");
-			ps.setString(1, d.getDevice_id());
+			ps.setInt(1,id);
 			status = ps.executeUpdate();
 			con.close();
 			
@@ -99,7 +98,7 @@ public class devicesDao extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				devices d = new devices();
-				d.setDevice_id(rs.getString("device_id"));
+				d.setDevice_id(rs.getInt("device_id"));
 				d.setD_name(rs.getString("d_name"));
 				d.setD_serial_number(rs.getString("d_serial_number"));
 				d.setD_warranty_period(rs.getString("d_warranty_period"));
@@ -123,7 +122,7 @@ public class devicesDao extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				d = new devices();
-				d.setDevice_id(rs.getString("device_id"));
+				d.setDevice_id(rs.getInt("device_id"));
 				d.setD_name(rs.getString("d_name"));
 				d.setD_serial_number(rs.getString("d_serial_number"));
 				d.setD_warranty_period(rs.getString("d_warranty_period"));

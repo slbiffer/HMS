@@ -48,7 +48,7 @@
 							<td>${u.getmainName()}</td>
 							<td>${u.getmainAddr()}</td>
 							<td><a href="EditMain.jsp?id=${u.getmainId()}">Edit</a></td>
-							<td><a href="deletemain_type.jsp?id=${u.getmainId()}">Delete</a></td>
+							<td><a href="deleteMain_typeController.jsp?id=${u.getmainId()}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

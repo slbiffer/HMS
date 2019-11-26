@@ -38,10 +38,9 @@ public class main_typesDao extends HttpServlet {
 		try {
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con
-					.prepareStatement("insert into main_type(main_type_id, main_type_Name, main_type_addr) values(?,?,?)");
-			ps.setString(1, u.getmainId());
-			ps.setString(2, u.getmainName());
-			ps.setString(3, u.getmainAddr());
+					.prepareStatement("insert into main_type(main_type_Name, main_type_addr) values(?,?,?)");
+			ps.setString(1, u.getmainName());
+			ps.setString(2, u.getmainAddr());
 			status = ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -57,7 +56,7 @@ public class main_typesDao extends HttpServlet {
 					.prepareStatement("update main_type set main_type_Name=?,main_type_addr=? where main_type_id=?");
 			ps.setString(1, u.getmainName());
 			ps.setString(2, u.getmainAddr());
-			ps.setString(3, u.getmainId());
+			ps.setInt(3, u.getmainId());
 			status = ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -65,13 +64,13 @@ public class main_typesDao extends HttpServlet {
 		return status;
 	}
 
-	public static int delete(main_types u) {
+	public static int delete(int id) {
 		int status = 0;
 		try {
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement("delete from main_type where main_type_id=?");
-			ps.setString(1,u.getmainId());
-			System.out.println("sds"+u);
+			ps.setInt(1,id);
+			System.out.println("sds"+id);
 			status = ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -89,7 +88,7 @@ public class main_typesDao extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				main_types u = new main_types();
-				u.setmainId(rs.getString("main_type_id"));
+				u.setmainId(rs.getInt("main_type_id"));
 				u.setmainName(rs.getString("main_type_Name"));
 				u.setmainAddr(rs.getString("main_type_addr"));
 				list.add(u);
@@ -111,7 +110,7 @@ public class main_typesDao extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				u = new main_types();
-				u.setmainId(rs.getString("main_type_id"));
+				u.setmainId(rs.getInt("main_type_id"));
 				u.setmainName(rs.getString("main_type_Name"));
 				u.setmainAddr(rs.getString("main_type_addr"));
 			}

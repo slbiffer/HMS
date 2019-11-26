@@ -50,7 +50,7 @@
 							<td>${c.getCtelephone()}</td>
 							<td>${c.getCAuthorized_person()}</td>
 							<td><a href="EditCategory.jsp?id=${c.getMainCid()}">Edit</a></td>
-							<td><a href="deletemain_type.jsp?id=${c.getMainCid()}">Delete</a></td>
+							<td><a href="deleteCategory_controller.jsp?id=${c.getMainCid()}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -22,14 +22,14 @@ public class main_types extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    private String mainId, mainName, mainAddr;
+    private String mainName, mainAddr;
+    private int mainId;
     
-    
-	public String getmainId() {
+	public int getmainId() {
 		return mainId;
 	}
 
-	public void setmainId(String mainId) {
+	public void setmainId(int mainId) {
 		this.mainId = mainId;
 	}
     

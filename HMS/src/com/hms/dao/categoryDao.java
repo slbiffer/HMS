@@ -40,12 +40,11 @@ public class categoryDao extends HttpServlet {
 
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement(
-					"insert into main_category(main_category_id, c_name, c_address, c_telephone, c_authorized_person) values(?,?,?,?,?)");
-			ps.setString(1, c.getMainCid());
-			ps.setString(2, c.getCname());
-			ps.setString(3, c.getCAddr());
-			ps.setString(4, c.getCtelephone());
-			ps.setString(5, c.getCAuthorized_person());
+					"insert into main_category( c_name, c_address, c_telephone, c_authorized_person) values(?,?,?,?)");
+			ps.setString(1, c.getCname());
+			ps.setString(2, c.getCAddr());
+			ps.setString(3, c.getCtelephone());
+			ps.setString(4, c.getCAuthorized_person());
 			status = ps.executeUpdate();
 			
 			con.close();
@@ -65,7 +64,7 @@ public class categoryDao extends HttpServlet {
 			ps.setString(2, c.getCAddr());
 			ps.setString(3, c.getCtelephone());
 			ps.setString(4, c.getCAuthorized_person());
-			ps.setString(5, c.getMainCid());
+			ps.setInt(5, c.getMainCid());
 			status = ps.executeUpdate();
 			con.close();
 			
@@ -75,13 +74,13 @@ public class categoryDao extends HttpServlet {
 		return status;
 	}
 
-	public static int delete(category c) {
+	public static int delete(int id) {
 		int status = 0;
 		try {
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement("delete from main_category where main_category_id=?");
-			ps.setString(1, c.getMainCid());
-			System.out.println(c.getMainCid());
+			ps.setInt(1,id);
+			System.out.println(id);
 			status = ps.executeUpdate();
 			con.close();
 			
@@ -101,7 +100,7 @@ public class categoryDao extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				category c = new category();
-				c.setMainCid(rs.getString("main_category_id"));
+				c.setMainCid(rs.getInt("main_category_id"));
 				c.setCname(rs.getString("c_name"));
 				c.setCAddr(rs.getString("c_address"));
 				c.setCtelephone(rs.getString("c_telephone"));
@@ -124,7 +123,7 @@ public class categoryDao extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				c = new category();
-				c.setMainCid(rs.getString("main_category_id"));
+				c.setMainCid(rs.getInt("main_category_id"));
 				c.setCname(rs.getString("c_name"));
 				c.setCAddr(rs.getString("c_address"));
 				c.setCtelephone(rs.getString("c_telephone"));

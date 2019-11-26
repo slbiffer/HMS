@@ -22,13 +22,14 @@ public class devices extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	private String device_id, d_name, d_serial_number, d_warranty_period, assign_date;
-
-	public String getDevice_id() {
+	private String d_name, d_serial_number, d_warranty_period, assign_date;
+	private int device_id;
+	
+	public int getDevice_id() {
 		return device_id;
 	}
 
-	public void setDevice_id(String device_id) {
+	public void setDevice_id(int device_id) {
 		this.device_id = device_id;
 	}
 

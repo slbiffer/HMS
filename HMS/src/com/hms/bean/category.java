@@ -22,13 +22,14 @@ public class category extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	private String mainCid, Cname, CAddr, Ctelephone, CAuthorized_person;
-
-	public String getMainCid() {
+	private String Cname, CAddr, Ctelephone, CAuthorized_person;
+	private int mainCid;
+	
+	public int getMainCid() {
 		return mainCid;
 	}
 
-	public void setMainCid(String mainCid) {
+	public void setMainCid(int mainCid) {
 		this.mainCid = mainCid;
 	}
 
