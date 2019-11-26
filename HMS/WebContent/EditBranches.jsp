@@ -17,7 +17,8 @@
 	<%@page import="com.hms.dao.branchesDao, com.hms.bean.branches"%>
 
 	<%
-		String id = request.getParameter("id");
+		String ids = request.getParameter("id");
+		int id=Integer.parseInt(ids);
 		branches b = branchesDao.getRecordById(id);
 	%>
 

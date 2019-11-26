@@ -97,7 +97,7 @@
 							<td><a href="EditBranches.jsp?id=${b.getBranch_id()}"><input
 									type="submit" class="btn btn-success" value="Edit"
 									class="select"></a></td>
-							<td><a href="deletemain_type.jsp?id=${b.getBranch_id()}"><input
+							<td><a href="deleteBranches.jsp?id=${b.getBranch_id()}"><input
 									type="submit" class="btn btn-danger" value="Delete"
 									class="select"></a></td>
 						</tr>

@@ -22,14 +22,14 @@ public class branches extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    private String branch_id, b_name,b_address,b_telephone,b_authorized_person;
-    
+    private String b_name,b_address,b_telephone,b_authorized_person;
+    private int branch_id;
 
-	public String getBranch_id() {
+	public int getBranch_id() {
 		return branch_id;
 	}
 
-	public void setBranch_id(String branch_id) {
+	public void setBranch_id(int branch_id) {
 		this.branch_id = branch_id;
 	}
 

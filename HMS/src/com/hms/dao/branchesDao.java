@@ -63,7 +63,7 @@ public class branchesDao extends HttpServlet {
 			ps.setString(2, b.getB_address());
 			ps.setString(3, b.getB_telephone());
 			ps.setString(4, b.getB_authorized_person());
-			ps.setString(5, b.getBranch_id());
+			ps.setInt(5, b.getBranch_id());
 			status = ps.executeUpdate();
 			con.close();
 			
@@ -73,12 +73,12 @@ public class branchesDao extends HttpServlet {
 		return status;
 	}
 
-	public static int delete(branches b) {
+	public static int delete(int id) {
 		int status = 0;
 		try {
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement("delete from branch where branch_id=?");
-			ps.setString(1, b.getBranch_id());
+			ps.setInt(1,id);
 			status = ps.executeUpdate();
 			con.close();
 			
@@ -98,7 +98,7 @@ public class branchesDao extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				branches b = new branches();
-				b.setBranch_id(rs.getString("branch_id"));
+				b.setBranch_id(rs.getInt("branch_id"));
 				b.setB_name(rs.getString("b_name"));
 				b.setB_address(rs.getString("b_address"));
 				b.setB_telephone(rs.getString("b_telephone"));
@@ -112,16 +112,16 @@ public class branchesDao extends HttpServlet {
 		return list;
 	}
 
-	public static branches getRecordById(String id) {
+	public static branches getRecordById(int id) {
 		branches b = null;
 		try {
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement("select * from branch where branch_id=?");
-			ps.setString(1, id);
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				b = new branches();
-				b.setBranch_id(rs.getString("branch_id"));
+				b.setBranch_id(rs.getInt("branch_id"));
 				b.setB_name(rs.getString("b_name"));
 				b.setB_address(rs.getString("b_address"));
 				b.setB_telephone(rs.getString("b_telephone"));
