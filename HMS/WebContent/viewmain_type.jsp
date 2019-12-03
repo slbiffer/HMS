@@ -67,8 +67,13 @@
 	<nav nav class="navbar navbar-dark bg-primary">
 
 		<a class="navbar-brand"><p>
-				<font color="White"><b>Company List</font>
-			</p></a>
+				<font color="White"><b>Company List &nbsp &nbsp &nbsp &nbsp &nbsp</font>
+			</p></a>&nbsp &nbsp 
+		<ul class="nav navbar-nav">&nbsp &nbsp &nbsp &nbsp
+			<li><a href="AddMain.jsp"><font color="#e4e683"><b> <u> Add a
+							Company</b></u></u></font></a></li>
+		</ul>
+
 		<form class="navbar-form navbar-right">
 			<input class="form-control mr-sm-2" type="search"
 				placeholder="Search" aria-label="Search">

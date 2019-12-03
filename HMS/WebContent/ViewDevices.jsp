@@ -55,7 +55,7 @@
 
 		</div>
 	</nav>
-<%@page
+	<%@page
 		import="com.hms.dao.devicesDao, com.hms.bean.devices, java.util.*"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -69,8 +69,14 @@
 	<nav nav class="navbar navbar-dark bg-primary">
 
 		<a class="navbar-brand"><p>
-				<font color="White"><b>Devices List</font>
-			</p></a>
+				<font color="White"><b>Devices List &nbsp &nbsp &nbsp
+						&nbsp</font>
+			</p></a> &nbsp &nbsp
+		<ul class="nav navbar-nav">
+			<li><a href="AddDevices.jsp"><font color="#e4e683"><b>
+							<u> Add a Device 
+					</b></u></u></font></a></li>
+		</ul>
 		<form class="navbar-form navbar-right">
 			<input class="form-control mr-sm-2" type="search"
 				placeholder="Search" aria-label="Search">
@@ -85,7 +91,7 @@
 					<tr>
 						<th>Device Id</th>
 						<th>Device Name</th>
-						<th>Device Serial Number</th>		
+						<th>Device Serial Number</th>
 						<th>Device Warranty Period</th>
 						<th>Assign Date</th>
 					</tr>
@@ -99,7 +105,8 @@
 							<td>${d.getD_warranty_period()}</td>
 							<td>${d.getAssign_date()}</td>
 							<td><a href="EditDevices.jsp?id=${d.getDevice_id()}">Edit</a></td>
-							<td><a href="deleteDevices_controller.jsp?id=${d.getDevice_id()}">Delete</a></td>
+							<td><a
+								href="deleteDevices_controller.jsp?id=${d.getDevice_id()}">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

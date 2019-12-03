@@ -14,8 +14,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	
-	
+
+
 </head>
 <body style="background-color: #E9ECEF">
 	<nav class="navbar navbar-inverse">
@@ -60,14 +60,22 @@
 		import="com.hms.dao.branchesDao, com.hms.bean.branches, java.util.*"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<nav nav class="navbar navbar-dark bg-primary">
+	<nav nav class="navbar navbar-dark bg-primary">
 
-  <a class="navbar-brand"><p><font color="White"><b>Branches List</font></p></a>
-  <form class="navbar-form navbar-right">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
+		<a class="navbar-brand"><p>
+				<font color="White"><b>Branches List &nbsp
+							&nbsp &nbsp &nbsp</font>
+			</p></a> &nbsp &nbsp
+		<ul class="nav navbar-nav">
+			<li><a href="AddBranches.jsp"><font color="#e4e683"><b> <u> Add a Branch
+					</b></u></u></font></a></li>
+		</ul>
+		<form class="navbar-form navbar-right">
+			<input class="form-control mr-sm-2" type="search"
+				placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</nav>
 
 	<%
 		List<branches> list = branchesDao.getAllRecords();
@@ -97,7 +105,8 @@
 							<td><a href="EditBranches.jsp?id=${b.getBranch_id()}"><input
 									type="submit" class="btn btn-success" value="Edit"
 									class="select"></a></td>
-							<td><a href="deleteBranches_controller.jsp?id=${b.getBranch_id()}"><input
+							<td><a
+								href="deleteBranches_controller.jsp?id=${b.getBranch_id()}"><input
 									type="submit" class="btn btn-danger" value="Delete"
 									class="select"></a></td>
 						</tr>
