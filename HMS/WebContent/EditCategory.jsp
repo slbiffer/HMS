@@ -119,8 +119,8 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-7"><jsp:include page="ViewCategoryTemplate.jsp"></jsp:include></div>
-
+			<%-- <div class="col-md-7"><jsp:include page="ViewCategoryTemplate.jsp"></jsp:include></div>
+ --%>
 		</div>
 	</div>
 

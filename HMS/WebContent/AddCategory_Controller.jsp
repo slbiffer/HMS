@@ -15,9 +15,9 @@
 <%
 int i=categoryDao.save(c);
 if(i>0){
-response.sendRedirect("AddCategory.jsp");
+response.sendRedirect("addCategory-success.jsp");
 }else{
-response.sendRedirect("addmain_type-error.jsp");
+response.sendRedirect("addCategory-error.jsp");
 }
 %>
 </body>

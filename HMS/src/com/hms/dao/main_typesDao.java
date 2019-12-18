@@ -33,15 +33,45 @@ public class main_typesDao extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static int save(main_types u) {
+	public static int check(main_types u) {
 		int status = 0;
 		try {
-			Connection con = db_connection.getconn();
-			PreparedStatement ps = con
-					.prepareStatement("insert into main_type(main_type_Name, main_type_addr) values(?,?,?)");
+			Connection con=db_connection.getconn();
+			PreparedStatement ps=con.prepareStatement("select main_type_Name from main_type where main_type_Name=?");
 			ps.setString(1, u.getmainName());
-			ps.setString(2, u.getmainAddr());
-			status = ps.executeUpdate();
+		}
+		catch(Exception e){
+			
+		}
+		
+		
+		return status;
+	}
+	
+	public static int save(main_types u) {
+		int status = 0;
+		int result=0;
+		try {
+			
+			Connection con = db_connection.getconn();
+			 PreparedStatement ps1 = con.prepareStatement("select main_type_Name from main_type where main_type_Name=?");
+	            ps1.setString(1,u.getmainName());
+	            ResultSet rs=ps1.executeQuery();
+	           
+	            if (!rs.next()) {
+	    			PreparedStatement ps = con
+	    					.prepareStatement("insert into main_type(main_type_Name, main_type_addr) values(?,?)");
+	    			ps.setString(1, u.getmainName());
+	    			ps.setString(2, u.getmainAddr());
+	    			status = ps.executeUpdate();
+	            }
+	            else{
+	            	u.setmainName(rs.getString("main_type_Name"));
+	            	System.out.println(""+u.getmainName()+" is already in use");
+	            }
+	            
+	            
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -51,6 +81,7 @@ public class main_typesDao extends HttpServlet {
 	public static int update(main_types u) {
 		int status = 0;
 		try {
+			System.out.println("id : "+u.getmainId());
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con
 					.prepareStatement("update main_type set main_type_Name=?,main_type_addr=? where main_type_id=?");

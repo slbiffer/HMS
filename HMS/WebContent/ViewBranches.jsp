@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-
+<title>Branches | HMS System</title>
+<link rel="shortcut icon" href="pix/btch.ico" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -21,18 +21,46 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="index.jsp">H.M.System
+					&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="#">Employee</a></li>
+
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
+					data-toggle="dropdown" href="viewmain_type.jsp">Main Company <span
+						class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="#">Main Company</a></li>
-						<li><a href="#">Sub Company</a></li>
-						<li><a href="#">Company Branches</a></li>
+						<li><a href="viewmain_type.jsp">View Main Company</a></li>
+						<li><a href="AddMain.jsp">Add Main Company</a></li>
 					</ul></li>
-				<li><a href="#">Page 2</a></li>
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewCategory.jsp">Sub Company <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewCategory.jsp">View Sub Company</a></li>
+						<li><a href="AddCategory.jsp">Add Sub Company</a></li>
+					</ul></li>
+
+				<li class="active"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewBranches.jsp">Company Branches<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="ViewBranches.jsp">View Company Branches</a></li>
+						<li ><a href="AddBranches.jsp">Add Company
+								Branches</a></li>
+					</ul></li>
+
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewDevices.jsp">Devices<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewDevices.jsp">View Devices</a></li>
+						<li><a href="AddDevices.jsp">Add Devices</a></li>
+					</ul></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -63,11 +91,12 @@
 	<nav nav class="navbar navbar-dark bg-primary">
 
 		<a class="navbar-brand"><p>
-				<font color="White"><b>Branches List &nbsp
-							&nbsp &nbsp &nbsp</font>
+				<font color="White"><b>Branches List &nbsp &nbsp &nbsp
+						&nbsp</font>
 			</p></a> &nbsp &nbsp
 		<ul class="nav navbar-nav">
-			<li><a href="AddBranches.jsp"><font color="#e4e683"><b> <u> Add a Branch
+			<li><a href="AddBranches.jsp"><font color="#e4e683"><b>
+							<u> Add a Branch 
 					</b></u></u></font></a></li>
 		</ul>
 		<form class="navbar-form navbar-right">

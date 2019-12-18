@@ -13,28 +13,59 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
 <script type="text/javascript" src="jquery/Main_Company.js"></script>
-<link rel="stylesheet" type="text/css" href="Styles/validationLabel.css">
+
+<link rel="stylesheet" type="text/css" href="Styles/validation.css">
+
 </head>
 <body style="background-color: #E9ECEF">
 
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="#">H.M.System
+					&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="#">Employee</a></li>
+
+				<li class="active"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="viewmain_type.jsp">Main Company <span
+						class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="#">Main Company</a></li>
-						<li><a href="#">Sub Company</a></li>
-						<li><a href="#">Company Branches</a></li>
+						<li><a href="viewmain_type.jsp">View Main Company</a></li>
+						<li class="active"><a href="AddMain.jsp">Add Main Company</a></li>
 					</ul></li>
-				<li><a href="#">Page 2</a></li>
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewCategory.jsp">Sub Company <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewCategory.jsp">View Sub Company</a></li>
+						<li><a href="AddCategory.jsp">Add Sub
+								Company</a></li>
+					</ul></li>
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewBranches.jsp">Company Branches<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewBranches.jsp">View Company Branches</a></li>
+						<li><a href="AddBranches.jsp">Add Company Branches</a></li>
+					</ul></li>
+
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewDevices.jsp">Devices<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewDevices.jsp">View Devices</a></li>
+						<li><a href="AddDevices.jsp">Add Devices</a></li>
+					</ul></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -58,23 +89,23 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid">
+	<div class="container-fluid" align="left">
 		<div class="raw">
 
-			<div class="col-md-5">
+			<div class="col-md-5" align="left">
 				<form class="form-horizontal" role="form" style="color: #010101"
 					id="Add_Main_Types" method="post"
 					action="addmain_typeController.jsp">
 					<h2>Add a Main Company</h2>
-					
-<!-- 					<div class="form-group row"> -->
-<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="main_company_id" -->
-<!-- 							class="col-md-4 col-form-label">Main Company Id</label> -->
-<!-- 						<div class="col-md-7"> -->
-<!-- 							<input type="text" class="form-control" id="mainId" name="mainId" -->
-<!-- 								placeholder="Company Id"> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
+
+					<!-- 					<div class="form-group row"> -->
+					<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="main_company_id" -->
+					<!-- 							class="col-md-4 col-form-label">Main Company Id</label> -->
+					<!-- 						<div class="col-md-7"> -->
+					<!-- 							<input type="text" class="form-control" id="mainId" name="mainId" -->
+					<!-- 								placeholder="Company Id"> -->
+					<!-- 						</div> -->
+					<!-- 					</div> -->
 
 					<div class="form-group row">
 						&nbsp &nbsp &nbsp &nbsp <label for="main_company_name"
@@ -104,7 +135,9 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-7"><jsp:include page="ViewMaintypeTemplate.jsp"></jsp:include></div>
+			<div class="col-md-7">
+				<img class="img-fluid" src="pix/web.png" width="700px" align="left">
+			</div>
 
 		</div>
 	</div>

@@ -15,9 +15,9 @@
 <%
 int i=devicesDao.save(d);
 if(i>0){
-response.sendRedirect("AddDevices.jsp");
+response.sendRedirect("addDevices-success.jsp");
 }else{
-response.sendRedirect("addmain_type-error.jsp");
+response.sendRedirect("addDevices-error.jsp");
 }
 %>
 </body>

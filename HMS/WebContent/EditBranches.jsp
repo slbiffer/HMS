@@ -69,14 +69,14 @@
 					action="EditBranches_controller.jsp">
 					<h2>Edit a Branch</h2>
 
-<!-- 					<div class="form-group row"> -->
-<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="branch_id" -->
-<!-- 							class="col-md-4 col-form-label">Branch Id</label> -->
-<!-- 						<div class="col-md-7"> -->
-<!-- 							<input type="text" class="form-control" id="branch_id" -->
-<%-- 								name="branch_id" value="<%=b.getBranch_id()%>"> --%>
-<!-- 						</div> -->
-<!-- 					</div> -->
+					<div class="form-group row">
+						&nbsp &nbsp &nbsp &nbsp <label for="branch_id"
+							class="col-md-4 col-form-label">Branch Id</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="branch_id"
+								name="branch_id" value="<%=b.getBranch_id()%>" readonly>
+						</div>
+					</div>
 					<div class="form-group row">
 						&nbsp &nbsp &nbsp &nbsp <label for="b_name"
 							class="col-md-4 col-form-label">Branch Name</label>
@@ -121,7 +121,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-7"><jsp:include page="ViewBranchTemplate.jsp"></jsp:include></div>
+			<%-- <div class="col-md-7"><jsp:include page="ViewBranchTemplate.jsp"></jsp:include></div> --%>
 
 		</div>
 	</div>

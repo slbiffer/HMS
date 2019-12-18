@@ -13,9 +13,9 @@
 <%
 int i=branchesDao.save(b);
 if(i>0){
-	response.sendRedirect("AddBranches.jsp");
+	response.sendRedirect("addBraches-success.jsp");
 }else{
-	response.sendRedirect("addmain_type-error.jsp");
+	response.sendRedirect("addBranches-error.jsp");
 }
 
 

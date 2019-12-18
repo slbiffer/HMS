@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Devices | HMS System</title>
+<link rel="shortcut icon" href="pix/btch.ico" />
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,18 +22,16 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="index.jsp">H.M.System
+					&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li class="active"><a href="#">Main Company</a></li>
-						<li><a href="#">Sub Company</a></li>
-						<li><a href="#">Company Branches</a></li>
-					</ul></li>
-				<li><a href="#">Page 2</a></li>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="#">Employee</a></li>
+				<li><a href="viewmain_type.jsp">Main Company</a></li>
+				<li><a href="ViewCategory.jsp">Sub Company</a></li>
+				<li><a href="ViewBranches.jsp">Company Branches</a></li>
+				<li class="nav-item active"><a href="ViewDevices.jsp">Devices</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -104,9 +103,13 @@
 							<td>${d.getD_serial_number()}</td>
 							<td>${d.getD_warranty_period()}</td>
 							<td>${d.getAssign_date()}</td>
-							<td><a href="EditDevices.jsp?id=${d.getDevice_id()}">Edit</a></td>
+							<td><a href="EditDevices.jsp?id=${d.getDevice_id()}"><input
+									type="submit" class="btn btn-success" value="Edit"
+									class="select"></a></td>
 							<td><a
-								href="deleteDevices_controller.jsp?id=${d.getDevice_id()}">Delete</a></td>
+								href="deleteDevices_controller.jsp?id=${d.getDevice_id()}"><input
+									type="submit" class="btn btn-danger" value="Delete"
+									class="select"></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

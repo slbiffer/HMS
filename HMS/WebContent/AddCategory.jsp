@@ -20,18 +20,46 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="#">H.M.System
+					&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li ><a href="#">Home</a></li>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="#">Employee</a></li>
+
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
+					data-toggle="dropdown" href="viewmain_type.jsp">Main Company <span
+						class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="#">Main Company</a></li>
-						<li><a href="#">Sub Company</a></li>
-						<li><a href="#">Company Branches</a></li>
+						<li><a href="viewmain_type.jsp">View Main Company</a></li>
+						<li><a href="AddMain.jsp">Add Main Company</a></li>
 					</ul></li>
-				<li><a href="#">Page 2</a></li>
+
+				<li class="active"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewCategory.jsp">Sub Company <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewCategory.jsp">View Sub Company</a></li>
+						<li class="active"><a href="AddCategory.jsp">Add Sub
+								Company</a></li>
+					</ul></li>
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewBranches.jsp">Company Branches<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewBranches.jsp">View Company Branches</a></li>
+						<li><a href="AddBranches.jsp">Add Company Branches</a></li>
+					</ul></li>
+
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewDevices.jsp">Devices<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewDevices.jsp">View Devices</a></li>
+						<li><a href="AddDevices.jsp">Add Devices</a></li>
+					</ul></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -58,73 +86,77 @@
 	<div class="container-fluid">
 		<div class="raw">
 
-			<div class="col-md-5"> 	<form class="form-horizontal" role="form" style="color: #010101"
-		id="AddCategory" method="post" action="AddCategory_Controller.jsp">
-		<h2>Add a Category</h2>
-		
-<!-- 		<div class="form-group row"> -->
-<!-- 			&nbsp &nbsp &nbsp &nbsp <label for="branch_id" -->
-<!-- 				class="col-md-4 col-form-label">Branch Id</label> -->
-<!-- 			<div class="col-md-7"> -->
-<!-- 				<input type="text" class="form-control" id="branch_id" -->
-<!-- 					name="branch_id" placeholder="Branch Id"> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 		<div class="form-group row"> -->
-<!-- 			&nbsp &nbsp &nbsp &nbsp <label for="main_c_fk_id" -->
-<!-- 				class="col-md-4 col-form-label">Main Category Id</label> -->
-<!-- 			<div class="col-md-7"> -->
-<!-- 				<input type="text" class="form-control" id="main_c_fk_id" -->
-<!-- 					name="main_c_fk_id" placeholder="Main Category Id"> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
+			<div class="col-md-5">
+				<form class="form-horizontal" role="form" style="color: #010101"
+					id="AddCategory" method="post" action="AddCategory_Controller.jsp">
+					<h2>Add a Sub Company</h2>
+
+					<!-- 		<div class="form-group row"> -->
+					<!-- 			&nbsp &nbsp &nbsp &nbsp <label for="branch_id" -->
+					<!-- 				class="col-md-4 col-form-label">Branch Id</label> -->
+					<!-- 			<div class="col-md-7"> -->
+					<!-- 				<input type="text" class="form-control" id="branch_id" -->
+					<!-- 					name="branch_id" placeholder="Branch Id"> -->
+					<!-- 			</div> -->
+					<!-- 		</div> -->
+					<!-- 		<div class="form-group row"> -->
+					<!-- 			&nbsp &nbsp &nbsp &nbsp <label for="main_c_fk_id" -->
+					<!-- 				class="col-md-4 col-form-label">Main Category Id</label> -->
+					<!-- 			<div class="col-md-7"> -->
+					<!-- 				<input type="text" class="form-control" id="main_c_fk_id" -->
+					<!-- 					name="main_c_fk_id" placeholder="Main Category Id"> -->
+					<!-- 			</div> -->
+					<!-- 		</div> -->
 
 
-		<div class="form-group row">
-			&nbsp &nbsp &nbsp &nbsp <label for="Cname"
-				class="col-md-4 col-form-label">Category Name</label>
+					<div class="form-group row">
+						&nbsp &nbsp &nbsp &nbsp <label for="Cname"
+							class="col-md-4 col-form-label">Sub Company Name</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="cname" name="cname"
+								placeholder="Category Name">
+						</div>
+					</div>
+					<div class="form-group row">
+						&nbsp &nbsp &nbsp &nbsp <label for="CAddr"
+							class="col-md-4 col-form-label">Sub Company Address</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="CAddr" name="CAddr"
+								placeholder="Category Address">
+						</div>
+					</div>
+					<div class="form-group row">
+						&nbsp &nbsp &nbsp &nbsp <label for="Ctelephone"
+							class="col-md-4 col-form-label">Sub Company Telephone</label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="ctelephone"
+								name="ctelephone" placeholder="Category Telephone">
+						</div>
+					</div>
+					<div class="form-group row">
+						&nbsp &nbsp &nbsp &nbsp <label for="CAuthorized_person"
+							class="col-md-4 col-form-label">Sub Company Authorized
+							Person</label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="CAuthorized_person"
+								name="CAuthorized_person" placeholder="Authorized Person">
+						</div>
+					</div>
+
+					<div class="form-group">
+						&nbsp &nbsp &nbsp &nbsp &nbsp
+						<button type="reset" class="btn btn-secondary">Cancel</button>
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+						<button type="submit" class="btn btn-success btn-md">
+							<b>Submit</b>
+						</button>
+					</div>
+				</form>
+			</div>
 			<div class="col-md-7">
-				<input type="text" class="form-control" id="cname"
-					name="cname" placeholder="Category Name">
+				<img class="img-fluid" src="pix/web.png" width="700px" align="left">
 			</div>
-		</div>
-		<div class="form-group row">
-			&nbsp &nbsp &nbsp &nbsp <label for="CAddr"
-				class="col-md-4 col-form-label">Category Address</label>
-			<div class="col-md-7">
-				<input type="text" class="form-control" id="CAddr"
-					name="CAddr" placeholder="Category Address">
-			</div>
-		</div>
-		<div class="form-group row">
-			&nbsp &nbsp &nbsp &nbsp <label for="Ctelephone"
-				class="col-md-4 col-form-label">Category Telephone</label>
-			<div class="col-sm-7">
-				<input type="text" class="form-control" id="ctelephone"
-					name="ctelephone" placeholder="Category Telephone">
-			</div>
-		</div>
-		<div class="form-group row">
-			&nbsp &nbsp &nbsp &nbsp <label for="CAuthorized_person"
-				class="col-md-4 col-form-label">Category Authorized Person</label>
-			<div class="col-sm-7">
-				<input type="text" class="form-control" id="CAuthorized_person"
-					name="CAuthorized_person" placeholder="Authorized Person">
-			</div>
-		</div>
-
-		<div class="form-group">
-			&nbsp &nbsp &nbsp &nbsp &nbsp
-			<button type="reset" class="btn btn-secondary">Cancel</button>
-			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-			<button type="submit" class="btn btn-success btn-md">
-				<b>Submit</b>
-			</button>
-		</div>
-	</form></div>
-			<div class="col-md-7"><jsp:include page="ViewCategoryTemplate.jsp"></jsp:include></div>
-
 		</div>
 	</div>
 

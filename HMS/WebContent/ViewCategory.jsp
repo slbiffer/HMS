@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Sub Company Category | HMS System</title>
+<link rel="shortcut icon" href="pix/btch.ico" />
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,18 +22,17 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="index.jsp">H.M.System
+					&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li class="active"><a href="#">Main Company</a></li>
-						<li><a href="#">Sub Company</a></li>
-						<li><a href="#">Company Branches</a></li>
-					</ul></li>
-				<li><a href="#">Page 2</a></li>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="#">Employee</a></li>
+				<li><a href="viewmain_type.jsp">Main Company</a></li>
+				<li class="nav-item active"><a href="ViewCategory.jsp">Sub
+						Company</a></li>
+				<li><a href="ViewBranches.jsp">Company Branches</a></li>
+				<li><a href="ViewDevices.jsp">Devices</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -67,12 +67,12 @@
 	<nav nav class="navbar navbar-dark bg-primary">
 
 		<a class="navbar-brand"><p>
-				<font color="White"><b>Category List &nbsp
-							&nbsp &nbsp &nbsp </font>
+				<font color="White"><b>Sub Company(Category) List &nbsp
+						&nbsp &nbsp &nbsp </font>
 			</p></a> &nbsp &nbsp
 		<ul class="nav navbar-nav">
-			<li><a href="AddCategory.jsp"><font color="#e4e683"><b><u> Add a Sub Company
-					</b></u></u></font></a></li>
+			<li><a href="AddCategory.jsp"><font color="#e4e683"><b><u>
+								Add a Sub Company </b></u></u></font></a></li>
 		</ul>
 		<form class="navbar-form navbar-right">
 			<input class="form-control mr-sm-2" type="search"
@@ -101,10 +101,15 @@
 							<td>${c.getCAddr()}</td>
 							<td>${c.getCtelephone()}</td>
 							<td>${c.getCAuthorized_person()}</td>
-							<td><a href="EditCategory.jsp?id=${c.getMainCid()}">Edit</a></td>
+							<td><a href="EditCategory.jsp?id=${c.getMainCid()}"><input
+									type="submit" class="btn btn-success" value="Edit"
+									class="select"></a></td>
 							<td><a
-								href="deleteCategory_controller.jsp?id=${c.getMainCid()}">Delete</a></td>
+								href="deleteCategory_controller.jsp?id=${c.getMainCid()}"><input
+									type="submit" class="btn btn-danger" value="Delete"
+									class="select"></a></td>
 						</tr>
+
 					</c:forEach>
 				</tbody>
 			</table>

@@ -56,7 +56,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active"><a class="nav-link"
 					href="index.jsp">Home &nbsp;</a></li>
-				<li class="nav-item"><a class="nav-link" href="Calender.jsp">Employee
+				<li class="nav-item"><a class="nav-link" href="#">Employee
 						&nbsp;</a></li>
 				<li class="nav-item"><a class="nav-link" href="viewmain_type.jsp">Main
 						Company &nbsp;</a></li>
@@ -64,12 +64,10 @@
 				<!-- Drop down menu -->
 				<li class="nav-item"><a class="nav-link" href="ViewCategory.jsp">Sub
 						Company &nbsp;</a></li>
-				<li class="nav-item"><a class="nav-link" href="ViewBranches.jsp">Branches
+				<li class="nav-item"><a class="nav-link" href="ViewBranches.jsp">Company Branches
 						&nbsp;</a></li>
 				<li class="nav-item"><a class="nav-link" href="ViewDevices.jsp">Devices
 						&nbsp; </a></li>
-				<li class="nav-item"><a class="nav-link" href="ContactUs.jsp">Contact
-						Us &nbsp; </a></li>
 				<li class="nav-item">
 					<form class="form-inline mr-auto">
 						<input class="form-control" type="text" placeholder="Search"
@@ -190,7 +188,7 @@
 			</div>
 		</div>
 		<!-- Footer Links -->
-		<div class="container text-center text-md-left mt-2">
+		<div class="container text-center ">
 
 			<!-- Grid row -->
 			<div class="row mt-3 ">
