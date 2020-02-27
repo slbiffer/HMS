@@ -13,9 +13,9 @@
 	<%
 		int i = devicesDao.update(d);
 		if (i > 0) {
-			response.sendRedirect("AddDevices.jsp");
+			response.sendRedirect("EditDevices-success.jsp");
 		} else {
-			response.sendRedirect("editmain_type-error.jsp");
+			response.sendRedirect("EditDevices-error.jsp");
 		}
 	%>
 </body>

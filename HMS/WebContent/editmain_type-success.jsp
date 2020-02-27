@@ -8,6 +8,7 @@
 <script type="text/javascript">
 	function alertName() {
 		alert("Successfuly Updated");
+		 window.location.href = "viewmain_type.jsp";
 	}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +17,7 @@
 	<script type="text/javascript">
 		window.onload = alertName;
 	</script>
-	<jsp:include page="AddMain.jsp"></jsp:include>
+	<jsp:include page="viewmain_type.jsp"></jsp:include>
 </body>
 </html>
 </html>

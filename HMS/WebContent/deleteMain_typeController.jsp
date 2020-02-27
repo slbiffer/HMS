@@ -19,7 +19,7 @@ int id=Integer.parseInt(Id);
 
 int i=main_typesDao.delete(id);
 if(i>0){
-response.sendRedirect("addmain_type-success.jsp");
+response.sendRedirect("deletemain_type-success.jsp");
 }else{
 response.sendRedirect("addmain_type-error.jsp");
 }

@@ -24,6 +24,6 @@
 	<script type="text/javascript">
 		window.onload = alertName;
 	</script>
-			<jsp:include page="AddMain.jsp"></jsp:include>
+			<jsp:include page="viewmain_type.jsp"></jsp:include>
 </body>
 </html>

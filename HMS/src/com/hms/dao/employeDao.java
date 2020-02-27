@@ -35,17 +35,19 @@ public class employeDao extends HttpServlet {
 	public static int save(Employes e) {
 		int status = 0;
 		try {
-			System.out.println(e.getEmp_id());
+			System.out.println("emp: "+e.getEmp_username());
+			System.out.println("emp2: "+e.getEmp_fname());
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement(
-					"insert into employes(emp_fname,emp_lname,emp_email,emp_password,emp_address,emp_position_title,emp_telephone) values(?,?,?,?,?,?,?)");
+					"insert into employes(emp_fname,emp_lname,emp_username,emp_email,emp_password,emp_address,emp_position_title,emp_telephone) values(?,?,?,?,?,?,?,?)");
 			ps.setString(1, e.getEmp_fname());
 			ps.setString(2, e.getEmp_lname());
-			ps.setString(3, e.getEmp_email());
-			ps.setString(4, e.getEmp_password());
-			ps.setString(5, e.getEmp_address());
-			ps.setString(6, e.getEmp_position_title());
-			ps.setString(7, e.getEmp_telephone());
+			ps.setString(3, e.getEmp_username());
+			ps.setString(4, e.getEmp_email());
+			ps.setString(5, e.getEmp_password());
+			ps.setString(6, e.getEmp_address());
+			ps.setString(7, e.getEmp_position_title());
+			ps.setString(8, e.getEmp_telephone());
 			status = ps.executeUpdate();
 
 			con.close();

@@ -18,7 +18,7 @@ int id=Integer.parseInt(Id);
 
 int i=devicesDao.delete(id);
 if(i>0){
-response.sendRedirect("AddDevices.jsp");
+response.sendRedirect("deleteDevices-success.jsp");
 }else{
 response.sendRedirect("addmain_type-error.jsp");
 }

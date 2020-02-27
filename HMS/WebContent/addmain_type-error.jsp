@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,7 @@
 <script type="text/javascript">
 	function alertName() {
 		alert("Sorry, an error occurred!");
+		window.location.href = "AddMain.jsp";
 	}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +21,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <body>
 	<script type="text/javascript">
 		window.onload = alertName;

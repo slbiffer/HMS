@@ -13,9 +13,9 @@
 	<%
 		int i = branchesDao.update(b);
 		if (i > 0) {
-			response.sendRedirect("AddBranches.jsp");
+			response.sendRedirect("EditBranches-success.jsp");
 		} else {
-			response.sendRedirect("editmain_type-error.jsp");
+			response.sendRedirect("EditBranches-error.jsp");
 		}
 	%>
 </body>

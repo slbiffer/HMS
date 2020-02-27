@@ -18,7 +18,7 @@ int i=branchesDao.delete(id);
 System.out.println("s  "+id);
 System.out.println("id "+b.getBranch_id());
 if(i>0){
-	response.sendRedirect("AddBranches.jsp");
+	response.sendRedirect("deleteBranches-success.jsp");
 }else{
 	response.sendRedirect("addmain_type-error.jsp");
 }

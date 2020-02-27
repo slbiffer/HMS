@@ -21,7 +21,7 @@ public class Employes extends HttpServlet {
 		super();
 	}
 
-	private String emp_fname, emp_lname, emp_email, emp_password, emp_address, emp_position_title, emp_telephone;
+	private String emp_fname, emp_lname,emp_username, emp_email, emp_password, emp_address, emp_position_title, emp_telephone;
 	private int emp_id;;
 
 	public String getEmp_email() {
@@ -30,6 +30,14 @@ public class Employes extends HttpServlet {
 
 	public void setEmp_email(String emp_email) {
 		this.emp_email = emp_email;
+	}
+
+	public String getEmp_username() {
+		return emp_username;
+	}
+
+	public void setEmp_username(String emp_username) {
+		this.emp_username = emp_username;
 	}
 
 	public String getEmp_password() {
@@ -87,6 +95,7 @@ public class Employes extends HttpServlet {
 	public void setEmp_id(int emp_id) {
 		this.emp_id = emp_id;
 	}
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -106,6 +115,11 @@ public class Employes extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+
+	public String emp_username() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

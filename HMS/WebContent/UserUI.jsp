@@ -21,7 +21,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-
 <style>
 /* Make the image fully responsive */
 .carousel-inner img {
@@ -32,9 +31,20 @@
 
 </head>
 <body style="background-color: #E9ECEF">
+	<%
+		if (session != null) {
+			if (session.getAttribute("user") != null) {
+				String name = (String) session.getAttribute("user");
+				out.print("Hello, " + name + "  Welcome to ur Profile");
+			} else {
+				response.sendRedirect("Login.jsp");
+			}
+		}
+	%>
+
 	<nav class="navbar navbar-expand-xl bg-dark navbar-dark sticky-top"
 		style="border-bottom: 1px; border-color: white;">
-		<a class="navbar-brand" href="index.jsp"> <img src="pix/logo.png"
+		<a class="navbar-brand" href="UserUI.jsp"> <img src="pix/logo.png"
 			width="35" height="35" class="d-inline-block align-top" alt="">
 			| <span>H.M.System</span>
 		</a>
@@ -45,7 +55,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active"><a class="nav-link"
-					href="index.jsp">Home &nbsp;</a></li>
+					href="UserUI.jsp">Home &nbsp;</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Employee
 						&nbsp;</a></li>
 				<li class="nav-item"><a class="nav-link"
@@ -64,14 +74,15 @@
 							aria-label="Search"> <i
 							class="fas fa-search text-white ml-2" aria-hidden="true"></i>
 					</form>
-				</li>
-
-				<li class="nav-item">&nbsp; &nbsp;<a class="btn btn-primary" href="Login.jsp">
-				Login
-				</a>&nbsp; &nbsp;
-				</li>
+				</li> &nbsp;
+				<li class="nav-item">
+					<form action="LogoutController" method="post">
+						<button type="submit" class="btn btn-primary btn-md">
+							logout</button>
+					</form>
+				</li>&nbsp; &nbsp;
 				<li class="nav-item"><a class="btn btn-primary"
-					href="Register.jsp"> Register </a></li>
+					href="Register.jsp">Register </a></li>
 			</ul>
 		</div>
 
@@ -217,7 +228,7 @@
 			</a> -->
 
 
-			Copyright Â© 2019 &nbsp; - &nbsp; All rights reserved. <br>
+			Copyright © 2019 &nbsp; - &nbsp; All rights reserved. <br>
 		</div>
 	</footer>
 </body>

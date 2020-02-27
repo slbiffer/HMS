@@ -13,7 +13,7 @@
 <%
 int i=employeDao.save(e);
 if(i>0){
-	response.sendRedirect("AddBranches.jsp");
+	response.sendRedirect("index.jsp");
 }else{
 	response.sendRedirect("addmain_type-error.jsp");
 }

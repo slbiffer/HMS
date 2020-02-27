@@ -19,21 +19,31 @@
 
 </head>
 <body style="background-color: #E9ECEF">
+	<%
+		if (session != null) {
+			if (session.getAttribute("user") != null) {
+				String name = (String) session.getAttribute("user");
+			} else {
+				response.sendRedirect("Login.jsp");
+			}
+		}
+	%>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.jsp">H.M.System
+				<a class="navbar-brand" href="UserUI.jsp">H.M.System
 					&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="index.jsp">Home</a></li>
+				<li><a href="UserUI.jsp">Home</a></li>
 				<li><a href="#">Employee</a></li>
 
 				<li class="active"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="viewmain_type.jsp">Main Company <span
 						class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="viewmain_type.jsp">View Main Company</a></li>
+						<li class="active"><a href="viewmain_type.jsp">View Main
+								Company</a></li>
 						<li><a href="AddMain.jsp">Add Main Company</a></li>
 					</ul></li>
 
@@ -42,8 +52,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="ViewCategory.jsp">View Sub Company</a></li>
-						<li><a href="AddCategory.jsp">Add Sub
-								Company</a></li>
+						<li><a href="AddCategory.jsp">Add Sub Company</a></li>
 					</ul></li>
 
 				<li class="dropdown"><a class="dropdown-toggle"
@@ -64,10 +73,14 @@
 					</ul></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
+				<li class="nav-item">
+					<form action="LogoutController" method="post">
+						<button type="submit" class="btn btn-link">
+							<span class="glyphicon glyphicon-log-out"></span> Log out
+						</button>
+					</form>
+				</li>&nbsp;
+
 			</ul>
 			<form class="navbar-form navbar-right" action="/action_page.php">
 				<div class="input-group">

@@ -13,9 +13,9 @@
 	<%
 		int i = categoryDao.update(c);
 		if (i > 0) {
-			response.sendRedirect("AddCategory.jsp");
+			response.sendRedirect("EditCategory-success.jsp");
 		} else {
-			response.sendRedirect("editmain_type-error.jsp");
+			response.sendRedirect("EditCategory-error.jsp");
 		}
 	%>
 </body>

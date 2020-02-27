@@ -18,31 +18,63 @@
 
 	<%
 		String Id = request.getParameter("id");
-		int id=Integer.parseInt(Id);
+		int id = Integer.parseInt(Id);
 		branches b = branchesDao.getRecordById(id);
 	%>
 
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="index.jsp">H.M.System
+					&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="#">Employee</a></li>
+
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
+					data-toggle="dropdown" href="viewmain_type.jsp">Main Company <span
+						class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="#">Main Company</a></li>
-						<li><a href="#">Sub Company</a></li>
-						<li><a href="#">Company Branches</a></li>
+						<li><a href="viewmain_type.jsp">View Main Company</a></li>
+						<li><a href="AddMain.jsp">Add Main Company</a></li>
 					</ul></li>
-				<li><a href="#">Page 2</a></li>
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewCategory.jsp">Sub Company <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewCategory.jsp">View Sub Company</a></li>
+						<li><a href="AddCategory.jsp">Add Sub Company</a></li>
+					</ul></li>
+
+				<li class="active"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewBranches.jsp">Company Branches<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="ViewBranches.jsp">View
+								Company Branches</a></li>
+						<li><a href="AddBranches.jsp">Add Company Branches</a></li>
+					</ul></li>
+
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="ViewDevices.jsp">Devices<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewDevices.jsp">View Devices</a></li>
+						<li><a href="AddDevices.jsp">Add Devices</a></li>
+					</ul></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
+				<li class="nav-item">
+					<form action="LogoutController" method="post">
+						<button type="submit" class="btn btn-link">
+							<span class="glyphicon glyphicon-log-out"></span> Log out
+						</button>
+					</form>
+				</li>&nbsp;
+
 			</ul>
 			<form class="navbar-form navbar-right" action="/action_page.php">
 				<div class="input-group">
@@ -121,7 +153,8 @@
 					</div>
 				</form>
 			</div>
-			<%-- <div class="col-md-7"><jsp:include page="ViewBranchTemplate.jsp"></jsp:include></div> --%>
+			<div class="col-md-7"><jsp:include
+					page="ViewBranchTemplate.jsp"></jsp:include></div>
 
 		</div>
 	</div>

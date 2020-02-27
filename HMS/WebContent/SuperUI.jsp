@@ -21,7 +21,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-
 <style>
 /* Make the image fully responsive */
 .carousel-inner img {
@@ -32,6 +31,17 @@
 
 </head>
 <body style="background-color: #E9ECEF">
+	<%
+		if (session != null) {
+			if (session.getAttribute("user") != null) {
+				String name = (String) session.getAttribute("user");
+				out.print("Hello, " + name + "  Welcome to ur Profile");
+			} else {
+				response.sendRedirect("Login.jsp");
+			}
+		}
+	%>
+
 	<nav class="navbar navbar-expand-xl bg-dark navbar-dark sticky-top"
 		style="border-bottom: 1px; border-color: white;">
 		<a class="navbar-brand" href="index.jsp"> <img src="pix/logo.png"
@@ -65,9 +75,14 @@
 							class="fas fa-search text-white ml-2" aria-hidden="true"></i>
 					</form>
 				</li>
-
-				<li class="nav-item">&nbsp; &nbsp;<a class="btn btn-primary" href="Login.jsp">
-				Login
+				
+				
+				
+				
+				<li class="nav-item">&nbsp; &nbsp;<a class="btn btn-primary">
+						<form action="LogoutController" method="post">
+							<input type="submit" value="Logout">
+						</form>
 				</a>&nbsp; &nbsp;
 				</li>
 				<li class="nav-item"><a class="btn btn-primary"
@@ -217,7 +232,7 @@
 			</a> -->
 
 
-			Copyright Â© 2019 &nbsp; - &nbsp; All rights reserved. <br>
+			Copyright © 2019 &nbsp; - &nbsp; All rights reserved. <br>
 		</div>
 	</footer>
 </body>

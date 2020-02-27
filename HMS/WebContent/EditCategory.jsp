@@ -23,10 +23,10 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="UserUI.jsp">H.M.System</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
+				<li><a href="UserUI.jsp">Home</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -37,10 +37,14 @@
 				<li><a href="#">Page 2</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
+				<li class="nav-item">
+					<form action="LogoutController" method="post">
+						<button type="submit" class="btn btn-link">
+						 <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+					</form>
+				</li>&nbsp;
+
 			</ul>
 			<form class="navbar-form navbar-right" action="/action_page.php">
 				<div class="input-group">
@@ -66,14 +70,14 @@
 					id="Edit_Main_Types" method="post"
 					action="EditCategory_Controller.jsp">
 					<h2>Edit a Category</h2>
-<!-- 					<div class="form-group row"> -->
-<!-- 						&nbsp &nbsp &nbsp &nbsp <label for="main_category_id" -->
-<!-- 							class="col-md-4 col-form-label">Main Category Id</label> -->
-<!-- 						<div class="col-md-7"> -->
-<!-- 							<input type="text" class="form-control" id="mainCid" -->
-<%-- 								name="mainCid" value="<%=c.getMainCid()%>"> --%>
-<!-- 						</div> -->
-<!-- 					</div> -->
+					<div class="form-group row">
+						&nbsp &nbsp &nbsp &nbsp <label for="main_category_id"
+							class="col-md-4 col-form-label">Main Category Id</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="mainCid"
+								name="mainCid" value="<%=c.getMainCid()%>" readonly>
+						</div>
+					</div>
 					<div class="form-group row">
 						&nbsp &nbsp &nbsp &nbsp <label for="cname"
 							class="col-md-4 col-form-label">Category Name</label>
@@ -119,8 +123,8 @@
 					</div>
 				</form>
 			</div>
-			<%-- <div class="col-md-7"><jsp:include page="ViewCategoryTemplate.jsp"></jsp:include></div>
- --%>
+			<div class="col-md-7"><jsp:include page="ViewCategoryTemplate.jsp"></jsp:include></div>
+
 		</div>
 	</div>
 

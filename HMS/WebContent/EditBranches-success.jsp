@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function alertName() {
-		alert("Sorry, an error occurred!");
-		 window.location.href = "viewmain_type.jsp";
+		alert("Successfuly Updated");
+		 window.location.href = "ViewBranches.jsp";
 	}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 	<script type="text/javascript">
 		window.onload = alertName;
 	</script>
-	<jsp:include page="viewmain_type.jsp"></jsp:include>
+	<jsp:include page="ViewBranches.jsp"></jsp:include>
 </body>
 </html>
 </html>

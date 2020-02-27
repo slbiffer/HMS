@@ -20,17 +20,15 @@
 	<%
 		String id = request.getParameter("id");
 		main_types u = main_typesDao.getRecordById(id);
-		System.out.println("idJSp: "+id);
-		int mainId=u.getmainId();
 	%>
 
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">H.M.System</a>
+				<a class="navbar-brand" href="UserUI.jsp">H.M.System</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
+				<li><a href="UserUI.jsp">Home</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -41,10 +39,14 @@
 				<li><a href="#">Page 2</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
+				<li class="nav-item">
+					<form action="LogoutController" method="post">
+						<button type="submit" class="btn btn-link">
+						 <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+					</form>
+				</li>&nbsp;
+
 			</ul>
 			<form class="navbar-form navbar-right" action="/action_page.php">
 				<div class="input-group">
@@ -70,7 +72,7 @@
 					id="Edit_Main_Types" method="post" action="editmain_type.jsp">
 					<h2>Edit a Main Company</h2>
 										<div class="form-group row">
-											&nbsp &nbsp &nbsp &nbsp <label for="main_company_id"
+												&nbsp; &nbsp; &nbsp; &nbsp; <label for="main_company_id"
 												class="col-md-4 col-form-label">Main Company Id</label>
 											<div class="col-md-7">
 												<input type="text" class="form-control" id="main_company_id"
@@ -78,7 +80,7 @@
 											</div>
 										</div>
 					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="main_company_name"
+						&nbsp; &nbsp; &nbsp; &nbsp; <label for="main_company_name"
 							class="col-md-4 col-form-label">Company Name</label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" id="main_company_name"
@@ -86,7 +88,7 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="main_company_addr"
+							&nbsp; &nbsp; &nbsp; &nbsp; <label for="main_company_addr"
 							class="col-md-4 col-form-label">Company Address</label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" id="main_company_addr"
@@ -95,18 +97,18 @@
 					</div>
 
 					<div class="form-group">
-						&nbsp &nbsp &nbsp &nbsp &nbsp
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 						<button type="reset" class="btn btn-secondary">Cancel</button>
-						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 						<button type="submit" class="btn btn-success btn-md">
 							<b>Submit</b>
 						</button>
 					</div>
 				</form>
 			</div>
-		<%-- 	<div class="col-md-7"><jsp:include
-					page="ViewMaintypeTemplate.jsp"></jsp:include></div> --%>
+			<div class="col-md-7"><jsp:include
+					page="ViewMaintypeTemplate.jsp"></jsp:include></div>
 
 		</div>
 	</div>

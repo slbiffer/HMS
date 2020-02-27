@@ -18,7 +18,7 @@ int id=Integer.parseInt(Id);
 
 int i=categoryDao.delete(id);
 if(i>0){
-response.sendRedirect("AddCategory.jsp");
+response.sendRedirect("deleteCategory-success.jsp");
 }else{
 response.sendRedirect("addmain_type-error.jsp");
 }
