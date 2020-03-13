@@ -36,7 +36,6 @@ public class employeDao extends HttpServlet {
 		int status = 0;
 		try {
 			System.out.println("emp: "+e.getEmp_username());
-			System.out.println("emp2: "+e.getEmp_fname());
 			Connection con = db_connection.getconn();
 			PreparedStatement ps = con.prepareStatement(
 					"insert into employes(emp_fname,emp_lname,emp_username,emp_email,emp_password,emp_address,emp_position_title,emp_telephone) values(?,?,?,?,?,?,?,?)");

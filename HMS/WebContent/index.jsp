@@ -70,8 +70,7 @@
 				Login
 				</a>&nbsp; &nbsp;
 				</li>
-				<li class="nav-item"><a class="btn btn-primary"
-					href="Register.jsp"> Register </a></li>
+				
 			</ul>
 		</div>
 

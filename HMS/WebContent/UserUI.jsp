@@ -81,8 +81,7 @@
 							logout</button>
 					</form>
 				</li>&nbsp; &nbsp;
-				<li class="nav-item"><a class="btn btn-primary"
-					href="Register.jsp">Register </a></li>
+			
 			</ul>
 		</div>
 

@@ -46,19 +46,23 @@ public class LoginController extends HttpServlet {
 
 			String Username = request.getParameter("uname");
 			String Password = request.getParameter("pass");
-			System.out.println("un:  " + Username);
-			System.out.println("pw: " + Password);
+			String id=null;
+			// System.out.println("un: " + Username);
+			// System.out.println("pw: " + Password);
 
 			Connection con = db_connection.getconn();
 			String sql = "SELECT * FROM employes";
 			java.sql.PreparedStatement stm = con.prepareStatement(sql);
 			ResultSet rs = stm.executeQuery(sql);
 			while (rs.next()) {
-				System.out.println("Recived params name :" + Username + "pass: " + Password);
-				System.out.println("DB recived params name :" + rs.getString("emp_username") + " pass: "
-						+ rs.getString("emp_password"));
-
-				if (Username.equals(rs.getString("emp_username")) && Password.equals(rs.getString("emp_password"))) {
+				id = rs.getString("emp_position_title");
+				
+				System.out.println("System params name: " + Username + "\tpass: " + Password);
+				System.out.println("DB params name : " + rs.getString("emp_username") + " \tpass: "
+						+ rs.getString("emp_password") + "\t title: " +id);
+			
+				if (Username.equals(rs.getString("emp_username")) && Password.equals(rs.getString("emp_password"))
+						&& id.equals("user")) {
 					// response.sendRedirect("index.jsp");
 
 					HttpSession session = request.getSession(true); // reuse existing
@@ -68,6 +72,21 @@ public class LoginController extends HttpServlet {
 					session.setMaxInactiveInterval(30); // 30 seconds
 					request.getRequestDispatcher("UserUI.jsp").forward(request, response);
 					return;
+				} 
+				else if (Username.equals(rs.getString("emp_username"))
+						&& Password.equals(rs.getString("emp_password")) && id.equals("admin")) {
+
+					HttpSession session = request.getSession(true); // reuse existing
+					// session if exist
+					// or create one
+					session.setAttribute("user", Username);
+					session.setMaxInactiveInterval(30); // 30 seconds
+					request.getRequestDispatcher("SuperUI.jsp").forward(request, response);
+					return;
+				}
+
+				else {
+					request.getRequestDispatcher("ErrorLogin.jsp").forward(request, response);
 				}
 
 			}
@@ -75,7 +94,7 @@ public class LoginController extends HttpServlet {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("error " + ex);
-			response.sendRedirect("ErrorLogin.jsp");
+			// response.sendRedirect("ErrorLogin.jsp");
 		}
 
 	}

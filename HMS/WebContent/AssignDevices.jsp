@@ -3,9 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Home | Hardware Management System</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -13,72 +10,39 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body style="background-color: #E9ECEF">
+	<%@page import="com.hms.dao.devicesDao, com.hms.bean.devices"%>
 
 	<%
-		if (session != null) {
-			if (session.getAttribute("user") != null) {
-				String name = (String) session.getAttribute("user");
-				System.out.print("username: "+name );
-			} else {
-				response.sendRedirect("Login.jsp");
-			}
-		}
+		String id = request.getParameter("id");
+		devices d = devicesDao.getRecordById(id);
 	%>
 
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="UserUI.jsp">H.M.System
-					&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a class="navbar-brand" href="UserUI.jsp">H.M.System</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li><a href="UserUI.jsp">Home</a></li>
-				<li><a href="#">Employee</a></li>
-
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="viewmain_type.jsp">Main Company <span
-						class="caret"></span></a>
+					data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="viewmain_type.jsp">View Main Company</a></li>
-						<li><a href="AddMain.jsp">Add Main Company</a></li>
+						<li class="active"><a href="#">Main Company</a></li>
+						<li><a href="#">Sub Company</a></li>
+						<li><a href="#">Company Branches</a></li>
 					</ul></li>
-
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="ViewCategory.jsp">Sub Company <span
-						class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="ViewCategory.jsp">View Sub Company</a></li>
-						<li><a href="AddCategory.jsp">Add Sub Company</a></li>
-					</ul></li>
-
-				<li class="active"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="ViewBranches.jsp">Company Branches<span
-						class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="ViewBranches.jsp">View Company Branches</a></li>
-						<li class="active"><a href="AddBranches.jsp">Add Company
-								Branches</a></li>
-					</ul></li>
-
-
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="ViewDevices.jsp">Devices<span
-						class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="ViewDevices.jsp">View Devices</a></li>
-						<li><a href="AddDevices.jsp">Add Devices</a></li>
-					</ul></li>
+				<li><a href="#">Page 2</a></li>
 			</ul>
-
 			<ul class="nav navbar-nav navbar-right">
 				<li class="nav-item">
 					<form action="LogoutController" method="post">
 						<button type="submit" class="btn btn-link">
-							<span class="glyphicon glyphicon-log-out"></span> Log out
-						</button>
+						 <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
 					</form>
 				</li>&nbsp;
 
@@ -104,57 +68,47 @@
 
 			<div class="col-md-5">
 				<form class="form-horizontal" role="form" style="color: #010101"
-					id="AddBranch" method="post" action="AddBranches_controller.jsp">
-					<h2>Add a Branch</h2>
-					<br>
-					<!-- 		<div class="form-group row"> -->
-					<!-- 			&nbsp &nbsp &nbsp &nbsp <label for="branch_id" -->
-					<!-- 				class="col-md-4 col-form-label">Branch Id</label> -->
-					<!-- 			<div class="col-md-7"> -->
-					<!-- 				<input type="text" class="form-control" id="branch_id" -->
-					<!-- 					name="branch_id" placeholder="Branch Id"> -->
-					<!-- 			</div> -->
-					<!-- 		</div> -->
-					<!-- 		<div class="form-group row"> -->
-					<!-- 			&nbsp &nbsp &nbsp &nbsp <label for="main_c_fk_id" -->
-					<!-- 				class="col-md-4 col-form-label">Main Category Id</label> -->
-					<!-- 			<div class="col-md-7"> -->
-					<!-- 				<input type="text" class="form-control" id="main_c_fk_id" -->
-					<!-- 					name="main_c_fk_id" placeholder="Main Category Id"> -->
-					<!-- 			</div> -->
-					<!-- 		</div> -->
-
-
+					id="Edit_Main_Types" method="post"
+					action="EditDevices_controller.jsp">
+					<h2>Edit a Device</h2>
 					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="b_name"
-							class="col-md-4 col-form-label">Branch Name</label>
+						&nbsp &nbsp &nbsp &nbsp <label for="device_id"
+							class="col-md-4 col-form-label">Device Id</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" id="b_name" name="b_name"
-								placeholder="Branch Name">
+							<input type="text" class="form-control" id="device_id"
+								name="device_id" value="<%=d.getDevice_id()%>" readonly>
 						</div>
 					</div>
 					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="b_address"
-							class="col-md-4 col-form-label">Branch Address</label>
+						&nbsp &nbsp &nbsp &nbsp <label for="d_name"
+							class="col-md-4 col-form-label">Device Name</label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="d_name" name="d_name"
+								value="<%=d.getD_name()%>">
+						</div>
+					</div>
+					<div class="form-group row">
+						&nbsp &nbsp &nbsp &nbsp <label for="d_serial_number"
+							class="col-md-4 col-form-label">Device Serial Number</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" id="b_address"
-								name="b_address" placeholder="Branch Address">
+							<input type="text" class="form-control" id="d_serial_number"
+								name="d_serial_number" value="<%=d.getD_serial_number()%>">
 						</div>
 					</div>
 					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="b_telephone"
-							class="col-md-4 col-form-label">Branch Telephone</label>
+						&nbsp &nbsp &nbsp &nbsp <label for="d_warranty_period"
+							class="col-md-4 col-form-label">Device Warranty Period</label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="b_telephone"
-								name="b_telephone" placeholder="Branch Telephone">
+							<input type="text" class="form-control" id="d_warranty_period"
+								name="d_warranty_period" value="<%=d.getD_warranty_period()%>">
 						</div>
 					</div>
 					<div class="form-group row">
-						&nbsp &nbsp &nbsp &nbsp <label for="b_authorized_person"
-							class="col-md-4 col-form-label">Branch Authorized Person</label>
+						&nbsp &nbsp &nbsp &nbsp <label for="assign_date"
+							class="col-md-4 col-form-label">Assign Date</label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="b_authorized_person"
-								name="b_authorized_person" placeholder="Authorized Person">
+							<input type="date" class="form-control" id="assign_date"
+								name="assign_date" value="<%=d.getAssign_date()%>">
 						</div>
 					</div>
 
@@ -169,9 +123,9 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-7">
-				<img class="img-fluid" src="pix/web.png" width="700px" align="left">
-			</div>
+			<div class="col-md-7"><jsp:include
+					page="ViewDevicesTemplate.jsp"></jsp:include></div>
+
 		</div>
 	</div>
 

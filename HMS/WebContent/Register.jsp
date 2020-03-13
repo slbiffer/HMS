@@ -100,8 +100,7 @@
 						<div class="form-row">
 							<div class="form-group col-md-12">
 								<label for="inputEmail4">Username</label> <input type="text"
-									placeholder="uere123" class="form-control"
-									name="emp_username">
+									placeholder="uere123" class="form-control" name="emp_username">
 							</div>
 						</div>
 						<div class="form-row">
@@ -132,9 +131,14 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-12">
-								<label for="inputAddress">Position</label> <input type="text"
-									class="form-control" id="emp_position_title" placeholder=""
-									name="emp_position_title">
+								<label for="inputAddress">Position</label>
+							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label
+									class="radio-inline"> <input type="radio"
+									name="emp_position_title" value="admin">Admin</label>&nbsp;&nbsp;&nbsp;
+								<label class="radio-inline"> <input type="radio"
+									name="emp_position_title" value="user" checked>User
+								</label>
+
 							</div>
 						</div>
 						<div class="form-row">
